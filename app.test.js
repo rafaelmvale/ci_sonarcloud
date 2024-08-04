@@ -3,7 +3,7 @@ const app = require('./app')
 
 describe('Todo API', () => {
     beforeEach(() => {
-        tasks = [];
+       let tasks = [];
     });
 
     it('deve adicionar uma nova tarefa', async () => {
@@ -17,7 +17,6 @@ describe('Todo API', () => {
     });
 
     it('deve listar todas as tarefas', async () => {
-        tasks = []
         await request(app).post('/tasks').send({ title: 'Tarefa 1' });
         await request(app).post('/tasks').send({ title: 'Tarefa 2' });
         
