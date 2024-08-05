@@ -2,9 +2,6 @@ const request = require('supertest')
 const app = require('./app')
 
 describe('Todo API', () => {
-    beforeEach(() => {
-       let tasks = [];
-    });
 
     it('deve adicionar uma nova tarefa', async () => {
         const response = await request(app)
@@ -14,6 +11,7 @@ describe('Todo API', () => {
 
         expect(response.body.title).toBe('Nova Tarefa');
         expect(response.body).toHaveProperty('id');
+
     });
 
     it('deve listar todas as tarefas', async () => {
@@ -46,6 +44,4 @@ describe('Todo API', () => {
           console.log('QUANTIDADE', getResponse.body.length)
         expect(getResponse.body.length).toBe(3);
       });
-    
-
-})
+});

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1722851944225" clover="3.2.0">
-  <project timestamp="1722851944226" name="All files">
+<coverage generated="1722852558910" clover="3.2.0">
+  <project timestamp="1722852558911" name="All files">
     <metrics statements="19" coveredstatements="18" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="4" elements="25" coveredelements="23" complexity="0" loc="19" ncloc="19" packages="1" files="1" classes="1"/>
     <file name="app.js" path="/home/rafaelvale/Cursos/FullCycle/todo-app/src/app.js">
       <metrics statements="19" coveredstatements="18" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="4"/>
