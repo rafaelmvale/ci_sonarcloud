@@ -1,9 +1,11 @@
 name: CI Pipeline
 
-on: [push]
-
+on: 
+  pull_request:
+    branches:
+      = main  
 jobs:
-  check-application:
+  run-ci:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -20,12 +22,12 @@ jobs:
       - name: Run tests
         run: npm test
 
-      # - name: Run SonarCloud Scan
-      #   uses: SonarSource/sonarcloud-github-action@v1.5
-      #   env:
-      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      #   with:
-      #     args: >
-      #       -Dsonar.projectKey=SEU_USUARIO_todo-app
-      #       -Dsonar.organization=SEU_ORGANIZACAO
-      #       -Dsonar.host.url=https://sonarcloud.io
+      - name: Run SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v1.5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.projectKey=rafaelmvale_ci_sonarcloud
+            -Dsonar.organization=rafaelmvale
+            -Dsonar.host.url=https://sonarcloud.io
