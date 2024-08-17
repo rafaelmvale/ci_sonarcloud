@@ -1,11 +1,11 @@
 name: CI Pipeline
 
-on: 
+on:
   pull_request:
     branches:
-      = main  
+      - develop
 jobs:
-  run-ci:
+  check-application:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -21,7 +21,7 @@ jobs:
 
       - name: Run tests
         run: npm test
-        
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
 
