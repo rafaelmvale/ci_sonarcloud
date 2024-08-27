@@ -1,10 +1,11 @@
 name: CI Pipeline
 
 on:
-  pull_request:
+  push:
     branches:
       - develop
-      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
   check-application:
@@ -27,19 +28,18 @@ jobs:
     runs-on: ubuntu-latest
     needs: check-application
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
         with:
-          node-version: "20"
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: yarn
 
-      - name: Run tests with coverage
-        run: npm test
+      - name: Test and coverage
+        run: yarn jest --coverage
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
@@ -51,4 +51,4 @@ jobs:
             -Dsonar.projectKey=rafaelmvale_ci_sonarcloud
             -Dsonar.organization=rafaelmvale
             -Dsonar.host.url=https://sonarcloud.io
-            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
