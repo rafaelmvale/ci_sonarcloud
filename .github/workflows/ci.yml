@@ -33,7 +33,7 @@ jobs:
       - name: SonarCloud Scan - Analysis
         uses: SonarSource/sonarcloud-github-action@v1.5
         env:
-          CI_SONARCLOUD: ${{ secrets.CI_SONARCLOUD }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
             -Dsonar.projectKey=rafaelmvale_ci_sonarcloud
