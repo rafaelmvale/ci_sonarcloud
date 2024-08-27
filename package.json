@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+     "sonar-scanner": "node_modules/sonar-scanner/bin/sonar-scanner"
   },
   "keywords": [],
   "author": "",
