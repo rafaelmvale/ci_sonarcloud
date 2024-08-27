@@ -52,4 +52,3 @@ jobs:
             -Dsonar.organization=rafaelmvale
             -Dsonar.host.url=https://sonarcloud.io
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
-            -Dsonar.testExecutionReportPaths=jest-sonar.xml
