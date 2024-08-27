@@ -31,8 +31,8 @@ jobs:
       - name: SonarCloud Scan - Setup
         uses: SonarSource/sonarcloud-github-action@v2.0.1
 
-      - name: SonarCloud Scan - Analysis
-        uses: SonarSource/sonarcloud-github-action@v2.0.1
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
