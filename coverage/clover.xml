@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1724713219941" clover="3.2.0">
-  <project timestamp="1724713219942" name="All files">
+<coverage generated="1724773855186" clover="3.2.0">
+  <project timestamp="1724773855187" name="All files">
     <metrics statements="20" coveredstatements="19" conditionals="4" coveredconditionals="3" methods="5" coveredmethods="5" elements="29" coveredelements="27" complexity="0" loc="20" ncloc="20" packages="1" files="1" classes="1"/>
     <file name="app.js" path="/mnt/d/FullCycle 3.0/Desafios/ci_sonarcloud/src/app.js">
       <metrics statements="20" coveredstatements="19" conditionals="4" coveredconditionals="3" methods="5" coveredmethods="5"/>
